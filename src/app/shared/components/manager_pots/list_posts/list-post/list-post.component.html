@@ -1,0 +1,24 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of  post">
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.description}}</td>
+      <td (click)="toggleZoom()">
+        <img [src]="i.image" [ngStyle]="zoomedImageStyle">
+      </td>
+      <td><button type="button" (click)="deletePost(i.id)">Delete</button></td>
+      <td><a [routerLink]="['/admin/update',i.id]">Update</a></td>
+    </tr>
+  </tbody>
+</table>
+

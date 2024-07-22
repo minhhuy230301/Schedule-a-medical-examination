@@ -1,0 +1,374 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+.wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 71.25rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+}
+.list-doctor {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    grid-auto-flow: dense;
+    gap: 24px;
+    grid-template-areas: ". . a a";
+    direction: rtl;
+}
+.list-doctor .header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-right: 32px;
+    grid-area: a / a / a / a;
+    direction: ltr;
+}
+.document-doctor {
+    color: var(--custom-heading-color,#262626);
+    font-weight: 700;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.information {
+    font-family: Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Oxygen,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    color: #595959;
+    font-size: p4;
+    line-height: 1.55;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    margin-top: -16px;
+    text-align: justify;
+}
+.ldrbNp {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 4px;
+}
+.see-more{
+    font-family: Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Oxygen,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    color: #2d87f3;
+    font-size: s5;
+    line-height: 1.55;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+}
+.bwsKEx {
+    min-width: 260px;
+    height: 100%;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 8px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding: 12px 12px 24px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 24px 32px, rgba(0, 0, 0, 0.04) 0px 16px 24px, rgba(0, 0, 0, 0.04) 0px 4px 8px, rgba(0, 0, 0, 0.04) 0px 0px 1px;
+}
+.bwsKEx .expert-avatar {
+    border-radius: 4px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+}
+.bwsKEx .expert-avatar[data-role="medical"] {
+    background: rgb(227 246 255);
+}
+.mantine-1ru0l9l {
+    position: relative;
+    display: inline-block;
+}
+
+.mantine-d87lwc {
+    bottom: 9px;
+    right: 9px;
+    -webkit-transform: translate(50%, 50%);
+    -moz-transform: translate(50%, 50%);
+    -ms-transform: translate(50%, 50%);
+    transform: translate(50%, 50%);
+    z-index: 100;
+    position: absolute;
+    min-width: 1.5625rem;
+    height: 1.5625rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 0.75rem;
+    padding-left: calc(0.625rem / 2);
+    padding-right: calc(0.625rem / 2);
+    border-radius: 62.5rem;
+    background-color: #2d87f3;
+    color: #fff;
+    white-space: nowrap;
+    background-color: transparent;
+    z-index: 1;
+    bottom: 9px;
+    right: 9px;
+    -webkit-transform: translate(50%, 50%);
+    -moz-transform: translate(50%, 50%);
+    -ms-transform: translate(50%, 50%);
+    transform: translate(50%, 50%);
+    position: absolute;
+    min-width: 1.5625rem;
+    height: 1.5625rem;
+    border-radius: 62.5rem;
+}
+.mantine-9rx0rd {
+    object-fit: cover;
+    width: 100%;
+    height: 100px;
+    display: block;
+    border-radius: 10px;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 100%;
+}
+.mantine-1707b50 {
+    -webkit-tap-highlight-color: black;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    border-radius: 2rem;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    width: 5.25rem;
+    min-width: 5.25rem;
+    height: 5.25rem;
+}
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+.wIj6fkD {
+    color: var(--custom-color,#262626);
+    font-weight: 400;
+    letter-spacing: 0;
+}
+.wIj6fkD[data-type=semiBold] {
+    font-weight: 600;
+}
+.wIj6fkD[data-size=s3] {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -.2px;
+}
+.wIj6fkD[data-size=p3] {
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.Lj0qoTD {
+    background-color: #1b3250;
+}
+.d76E4SH {
+    margin: 0 auto;
+    width: 100%;
+}
+.Lj0qoTD .inner {
+    margin: 0 auto;
+    padding: 64px 24px 98px;
+}
+.inner h1 {
+    color: #9aa2ac;
+    font-size: 19px;
+}
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+.Lj0qoTD .columns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.Lj0qoTD .columns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.Lj0qoTD .columns>div:first-child {
+    display: flex;
+    flex-basis: 40%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.Lj0qoTD .columns>div:nth-child(2) {
+    display: flex;
+    flex-basis: 60%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.Lj0qoTD .newsletter>p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 22px;
+    line-height: 28.5px;
+    max-width: 380px;
+}
+.wIj6fkD[data-type=bold], .wIj6fkD[data-type=caption] {
+    font-weight: 700;
+}
+.Lj0qoTD .signupButton {
+    border: none;
+    display: none;
+    margin-top: 16px;
+    outline: none;
+    text-transform: uppercase;
+}
+.ITgol3T[data-color=primary] {
+    background-color: #2d87f3;
+    border: 1px solid #2d87f3;
+    color: #fff;
+}
+.ITgol3T[data-size=lg] {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 24px;
+}
+.ITgol3T {
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color .3s,border-color .3s;
+    width: auto;
+}
+.S2kaD9B, .fAwTdkg {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.Lj0qoTD .social {
+    margin-top: 24px;
+}
+.Lj0qoTD .social p {
+    color: #9aa2ac;
+}
+.Lj0qoTD .icons {
+    margin-bottom: 20px;
+    margin-top: 12px;
+}
+.Lj0qoTD .icons>a:not(:last-child) {
+    margin-right: 16px;
+}
+.Lj0qoTD .icons .social-icon {
+    height: 32px;
+    width: 32px;
+}
+.Lj0qoTD hr {
+    display: none;  
+    background: #9aa2ac;
+    border: none;
+    height: 1px;
+    margin: 16px 0;
+    opacity: .1;
+    outline: none;
+}
+.Lj0qoTD .columns>div:nth-child(2)>div:not(:last-child) {
+    flex-basis: 27.5%;
+}
+.Lj0qoTD .bigLink:not(:last-child) {
+    margin-bottom: 12px;
+}
+.Lj0qoTD .biglinks {
+    margin-bottom: 68px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    word-break: break-word;
+}
+.Lj0qoTD .biglinks a {
+    display: block;
+}
+.Lj0qoTD .mHalf {
+    margin-top: -18px;
+    display: inline-block;
+    margin-bottom: 24px;
+    padding-right: 24px;
+    vertical-align: top;
+    width: 50%;
+    line-height: 24px;
+    letter-spacing: -.2px;
+}
+
+.Lj0qoTD .mHalf p {
+    color: #9aa2ac;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.Lj0qoTD .link p {
+    color: #fff;
+    font-weight: 700;
+    word-break: break-word;
+}
+.Lj0qoTD hr {
+    background: #9aa2ac;
+    border: none;
+    height: 1px;
+    margin: 16px 0;
+    opacity: .1;
+    outline: none;
+}
+.otherSites .wIj6fkD{
+    margin-bottom: 12px;
+    font-size: 13px;
+    color:#9aa2ac;
+}
+
+.Lj0qoTD .otherSites .flags {
+    display: flex;
+    margin-bottom: 8px;
+}
+.OO-qFWT .country-flag {
+    height: 100%;
+    width: 50%;
+}
+.copyright .wIj6fkD, p {
+    color: #9aa2ac;
+}
+
+

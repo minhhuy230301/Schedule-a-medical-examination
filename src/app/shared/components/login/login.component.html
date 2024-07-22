@@ -1,0 +1,29 @@
+
+    <section class="portal">
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+            <div class="title">
+                <h1>LOG IN</h1>
+                <p>Welcome back! Please enter your details.</p>
+            </div>
+            <button id="google-signin">
+                <img src="/src/assets/google/google-logo.svg" alt="">
+                Log in with Google
+            </button>
+            <span>or</span>
+            <div class="input-field">
+                <input type="text" formControlName="userName" class="form-control" id="username" placeholder=" ">
+                <label for="username">Username</label>
+            </div>
+            <div class="input-field">
+                <input type="password" formControlName="userPassword" class="form-control" id="password" placeholder=" ">
+                <label for="password">Password</label>
+                <img id="show-hide-pass" src="/src/assets/google/show-eye.svg" alt="">
+            </div>
+            <a href="#" id="forgot-pass">Forgot Password</a>
+            <button type="submit" id="signin">Sign in</button>
+            <p id="signup">
+                Don't have an account?
+                <a href="#">Sign up here</a>
+            </p>
+        </form>
+    </section>

@@ -1,0 +1,25 @@
+export interface Pots {
+  id:number;
+  name?:string;
+  description?:string;
+  image?:string;
+  topic?:string;
+  title1?:string;
+  descriptionTitle1?:string;
+  image1?:string;
+  title2?:string;
+  descriptionTitle2?:string;
+  image2?:string;
+  title3?:string;
+  descriptionTitle3?:string;
+  image3?:string;
+  title4?:string;
+  descriptionTitle4?:string;
+  image4?:string;
+  title5?:string;
+  descriptionTitle5?:string;
+  image5?:string;
+  title6?:string;
+  descriptionTitle6?:string;
+  image6?:string;
+}

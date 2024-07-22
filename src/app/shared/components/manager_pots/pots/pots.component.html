@@ -1,0 +1,59 @@
+<!-- <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+  <input type="text" [(ngModel)]="data.name" name="name" placeholder="Name">
+  <input type="file" (change)="onImageSelected($event)" name="image">
+  <button type="submit">Submit</button>
+</form> -->
+<input type="file"  (change)="onImageSelected($event)"  >
+<!-- <input type="file" (change)="onImageSelected($event)">
+<img src="https://firebasestorage.googleapis.com/v0/b/imagecapstone1.appspot.com/o/pots%2FWBS%20main%20(3).png?alt=media&token=7dcbdeba-3b93-427f-baf4-95dd1056e2f7"> -->
+<div>
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <form [formGroup]="potsFormCreate" (ngSubmit)="submit()">
+      <input type="text" formControlName="name" class="form-control"  placeholder="Enter title">
+      <span class="validate" *ngIf="potsFormCreate.controls['name'].hasError('required')&& potsFormCreate.controls['name'].touched">Mô tả tiêu đề không được để trống</span>
+      <textarea formControlName="description" class="form-control" rows="10" cols="50" placeholder="Enter title"></textarea>
+      <!-- <span  *ngIf="potsFormCreate.controls.description.touched && potsFormCreate.controls.description.errors?.required">Tên tài khoản không được bỏ trống</span> -->
+      <input type="file" class="form-control"  (change)="onImageSelected($event)" name="image" >
+      <input formControlName="title1" type="text" placeholder="Enter title">
+      <br>
+      <textarea formControlName="descriptionTitle1" rows="10" cols="50" placeholder="Enter descriptionTitle1"></textarea>
+      <!-- <input formControlName="image1" type="file"> -->
+      <br>
+      <input formControlName="title2" type="text" placeholder="Enter title">
+      <br>
+      <textarea formControlName="descriptionTitle2" rows="10" cols="50" placeholder="Enter descriptionTitle2"></textarea>
+      <br>
+      <!-- <input formControlName="image2" type="file"> -->
+      <input formControlName="title3" type="text" placeholder="Enter title">
+      <br>
+      <textarea formControlName="descriptionTitle3" rows="10" cols="50" placeholder="Enter descriptionTitle3"></textarea>
+      <br>
+      <!-- <input formControlName="image3" type="file"> -->
+      <input formControlName="title4" type="text" placeholder="Enter title">
+      <br>
+      <textarea formControlName="descriptionTitle4" rows="10" cols="50" placeholder="Enter descriptionTitle4"></textarea>
+      <br>
+      <!-- <input formControlName="image4" type="file"> -->
+      <input formControlName="title5" type="text" placeholder="Enter title">
+      <br>
+      <textarea formControlName="descriptionTitle5" rows="10" cols="50" placeholder="Enter descriptionTitle5"></textarea>
+      <br>
+      <!-- <input formControlName="image5" type="file"> -->
+      <br>
+      <select  formControlName="topic" name="topic">
+        <option *ngFor="let i of topic" [ngValue]="i" aria-placeholder="Choose topic">{{i.name}}</option>
+      </select>
+      <br>
+      <button style="background-color: blue;">Tạo mới</button>
+    </form>
+  </div>
+  <div class="col-lg-3">
+    <!-- <br>
+      <button style="background-color: red; border-radius: 5px;" (click)="clickHere()">click here</button>
+      <h1>
+        {{message}}
+    </h1>
+    <br> -->
+  </div>
+</div>
