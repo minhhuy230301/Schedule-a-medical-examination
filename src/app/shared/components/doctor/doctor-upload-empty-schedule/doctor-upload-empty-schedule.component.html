@@ -1,0 +1,129 @@
+<div class="container">
+  <div class="flex flex-wrap gap-[30px]">
+    <div class="w-4/12">
+      <p style="color: red;font-size: 25px;">{{message}}</p>
+      <mat-card class="demo-inline-calendar-card" (click)="handleCalendarClick()">
+        <mat-calendar [(selected)]="selected"></mat-calendar>
+      </mat-card>
+    </div>
+    <div class="w-7/12 border-2 rounded-xl p-3">
+      <!-- Buổi sáng -->
+      <div class="mt-3">
+        <h1 class="font-semibold">Buổi sáng</h1>
+        <div class="flex flex-wrap justify-start mt-3 gap-[10px]" >
+          <ng-container *ngFor="let i of times">
+            <div *ngIf="i.part == 1"
+            [ngClass]="{
+              'time1 text-[12px] bg-blue-400 items-center': isSelectedChoose(i),
+              'time1 text-[12px] items-center bg-white': !isSelectedChoose(i),
+              'disabled-time': isTimeDisabled(i)
+            }"
+              style="
+              font-size: 12px;
+                border: 1px solid rgb(228, 232, 236);
+                box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;
+                border-radius: 6px;
+                padding: 5px 12px;
+              "
+               (click)="activeButton(i)"
+            >
+            <button>
+                {{ i.hour }}
+              </button>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <!--  -->
+      <!-- Buổi chiều -->
+      <div class="mt-3">
+        <h1 class="font-semibold">Buổi Chiều</h1>
+        <div class="flex flex-wrap justify-start mt-3 gap-[10px]">
+          <ng-container *ngFor="let i of times">
+            <div *ngIf="i.part == 2"
+            [ngClass]="{
+              'time1 text-[12px] bg-blue-400 items-center': isSelectedChoose(i),
+              'time1 text-[12px] items-center bg-white': !isSelectedChoose(i),
+              'disabled-time': isTimeDisabled(i)
+            }"
+              style="font-size: 12px;
+                border: 1px solid rgb(228, 232, 236);
+                box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;
+                border-radius: 6px;
+                padding: 5px 12px;
+              "
+               (click)="activeButton(i)"
+            >
+            <button>
+              {{ i.hour }}
+            </button>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <!--  -->
+      <!-- Buổi tối -->
+      <div class="mt-3">
+        <h1 class="font-semibold">Buổi tối</h1>
+        <div class="flex flex-wrap justify-start mt-3 gap-[10px]">
+          <!-- <div
+            class="text-[12px] items-center bg-white"
+            style="
+              border: 1px solid rgb(228, 232, 236);
+              box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;
+              border-radius: 6px;
+              padding: 5px 12px;
+            "
+          >
+            17:30 - 18:00
+          </div> -->
+          <ng-container *ngFor="let i of times">
+            <div *ngIf="i.part == 3"
+            [ngClass]="{
+              'time1 text-[12px] bg-blue-400 items-center': isSelectedChoose(i),
+              'time1 text-[12px] items-center bg-white': !isSelectedChoose(i),
+              'disabled-time': isTimeDisabled(i)
+            }"
+              style="
+              font-size: 12px;
+                border: 1px solid rgb(228, 232, 236);
+                box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;
+                border-radius: 6px;
+                padding: 5px 12px;
+              "
+               (click)="activeButton(i)"
+            >
+            <button>
+              {{ i.hour }}
+            </button>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <!--  -->
+      <div class="mt-3 flex flex-wrap gap-[30px]">
+        <button
+        class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+      (click)="chooseAll()"
+      >
+        Chọn tất cả
+      </button>
+      <button
+      class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+      (click)="deleteAll()"
+    >
+      Bỏ chọn tất cả
+    </button>
+      </div>
+      <div class="mt-3">
+        <button
+                class="w-full bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                (click)="upload()"
+              >
+                Tải lên
+              </button>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,192 @@
+<div class="profile">
+  <div class="flex justify-between items-center w-[100%]">
+    <h3 class="font-bold text-[27px] text-left">Hồ sơ</h3>
+    <h3
+      (click)="openUpdate()"
+      style="
+        font-size: 15px;
+        color: rgb(68, 68, 206);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      "
+    >
+      Chỉnh sửa
+      <p><mat-icon>open_in_new</mat-icon></p>
+    </h3>
+  </div>
+
+  <div class="avatar flex flex-row gap-4 items-center">
+    <div class="image-container">
+      <img
+        class="rounded-full"
+        [src]="
+          url
+            ? url
+            : 'https://lh3.googleusercontent.com/a/AAcHTtfaNzPfO-0ssuBy04RG6-ybOEAL5LrdteRr98jvZfHAxf0=s96-c'
+        "
+        alt=""
+      />
+      <input
+        id="fileInput"
+        type="file"
+        [(ngModel)]="url"
+        class="select-profile-picture"
+        (change)="onSelectFile($event)"
+      />
+    </div>
+    <div >
+      <!-- <p class="font-bold">{{this.patient['name']}}</p>
+      <p style="color: rgb(70, 159, 231)">{{this.patient['account']['username']}}</p> -->
+    </div>
+  </div>
+
+  <form *ngIf="!isUpdate" class="shadow p-2 flex flex-col gap-[14px]">
+    <div
+      class="flex flex-col gap-[10px] pb-[10px]"
+      style="border-bottom: 1px solid gray"
+    >
+      <p style="font-weight: 600">Tên truy cập</p>
+      <p>{{patient.username}}</p>
+    </div>
+    <div
+      class="flex flex-col gap-[10px] pb-[10px]"
+      style="border-bottom: 1px solid gray"
+    >
+      <p style="font-weight: 600">Họ và tên</p>
+      <p>{{patient.name}}</p>
+    </div>
+    <div
+      class="flex flex-col gap-[10px] pb-[10px]"
+      style="border-bottom: 1px solid gray"
+    >
+      <p style="font-weight: 600">Email</p>
+      <p>{{patient.email}}</p>
+
+    </div>
+    <div
+      class="flex flex-col gap-[10px] pb-[10px]"
+      style="border-bottom: 1px solid gray"
+    >
+      <p style="font-weight: 600">Ngày sinh</p>
+      <p>{{patient.date}}</p>
+
+    </div>
+    <div
+      class="flex flex-col gap-[10px] pb-[10px]"
+      style="border-bottom: 1px solid gray"
+    >
+      <p style="font-weight: 600">Giới tính</p>
+      <p *ngIf="patient.gender==0">Nữ</p>
+      <p *ngIf="patient.gender==1">Nam</p>
+      <p *ngIf="patient.gender==2">Giới tính khác</p>
+    </div>
+    <div class="flex flex-col gap-[10px] pb-[10px]">
+      <p style="font-weight: 600">Số điện thoại</p>
+      <p>{{patient.phoneNumber}}</p>
+
+    </div>
+
+    <div class="flex flex-col gap-[10px] pb-[10px]">
+      <p style="font-weight: 600">Địa chỉ nhà</p>
+      <p>{{patient.address}}</p>
+
+    </div>
+  </form>
+  <form [formGroup]="dataPatient" (ngSubmit)="getDataPatientFromForm()" *ngIf="isUpdate" class="shadow p-2 flex flex-col gap-[14px] " >
+    <div >
+      <div
+      class="flex flex-col gap-[10px] pb-[10px]"
+      style="border-bottom: 1px solid gray"
+    >
+      <p style="font-weight: 600">Tên truy cập</p>
+      <input
+
+        type="text"
+        class="block w-[50%] p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        formControlName="username"
+        readonly
+      />
+    </div>
+    <div
+      class="flex flex-col gap-[10px] pb-[10px]"
+      style="border-bottom: 1px solid gray"
+    >
+      <p style="font-weight: 600">Họ và tên</p>
+      <input
+        type="text"
+        class="block w-[50%] p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+       formControlName="name" class="form-control"
+      />
+        <p style="color: red" *ngIf="dataPatient.controls['name'].hasError('required')&& dataPatient.controls['name'].touched">(*)Tên không được để trống</p>
+            <p style="color: red" *ngIf="dataPatient.controls['name'].hasError('pattern')&& dataPatient.controls['name'].touched">(*)Tên không được chứa kí tự đặc biệt</p>
+    </div>
+    <div
+      class="flex flex-col gap-[10px] pb-[10px]"
+      style="border-bottom: 1px solid gray"
+    >
+      <p style="font-weight: 600">Email</p>
+      <input
+        type="text"
+        class="block w-[50%] p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        formControlName="email" class="form-control"
+      />
+        <p style="color: red" *ngIf="dataPatient.controls['email'].hasError('required')&& dataPatient.controls['email'].touched">(*)Email không được để trống</p>
+      <p style="color: red" *ngIf="dataPatient.controls['email'].hasError('pattern')&& dataPatient.controls['email'].touched">(*)Email phải đúng định dạng(abc@gmail.com) </p>
+    </div>
+    <div
+      class="flex flex-col gap-[10px] pb-[10px]"
+      style="border-bottom: 1px solid gray"
+    >
+      <p style="font-weight: 600">Ngày sinh</p>
+      <input
+        type="text"
+        class="block w-[50%] p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        formControlName="date" class="form-control"
+      />
+      <p style="color: red" *ngIf="dataPatient.controls['date'].hasError('required')&& dataPatient.controls['date'].touched">(*)Ngày sinh không được để trống</p>
+            <p style="color: red" *ngIf="dataPatient.controls['date'].hasError('pattern')&& dataPatient.controls['date'].touched">(*)Ngày sinh phải đúng định dạng(Năm-Tháng-Ngày) </p>
+    </div>
+    <div
+      class="flex flex-col gap-[10px] pb-[10px]"
+      style="border-bottom: 1px solid gray"
+    >
+      <p style="font-weight: 600">Giới tính</p>
+      <select formControlName="gender" class="form-control">
+        <option value="0">Nữ</option>
+        <option value="1">Nam</option>
+        <option value="2">giới tính khác</option>
+
+      </select>
+
+    </div>
+    <div class="flex flex-col gap-[10px] pb-[10px]">
+      <p style="font-weight: 600">Số điện thoại</p>
+      <input
+        type="text"
+        class="block w-[50%] p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+       formControlName="phoneNumber" class="form-control"
+      />
+      <p style="color: red" *ngIf="dataPatient.controls['phoneNumber'].hasError('required')&& dataPatient.controls['phoneNumber'].touched">(*)Số điện thoại không được để trống</p>
+      <p style="color: red" *ngIf="dataPatient.controls['phoneNumber'].hasError('pattern')&& dataPatient.controls['phoneNumber'].touched">(*)Chỉ được nhập số </p>
+    </div>
+    <div class="flex flex-col gap-[10px] pb-[10px]">
+      <p style="font-weight: 600">Địa chỉ nhà</p>
+      <input
+        type="text"
+        class="block w-[50%] p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+       formControlName="address" class="form-control"
+      />
+    </div>
+    <div>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl"
+      >
+        Lưu
+      </button>
+    </div>
+    </div>
+
+  </form>
+</div>

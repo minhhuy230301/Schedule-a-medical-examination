@@ -1,0 +1,19 @@
+.relativeCategoties__menu__wrapper{
+    max-width: 180px;
+        min-height: 180px;
+        flex: 1 1 0%;
+   
+    display: flex;
+    height: 125px;
+    box-sizing: border-box;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid rgb(228, 232, 236);
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;
+    cursor: pointer;
+    text-decoration: none;
+}

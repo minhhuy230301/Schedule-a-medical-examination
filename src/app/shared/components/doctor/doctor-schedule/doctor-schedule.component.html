@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="flex flex-wrap gap-[30px]">
+    <div class="w-4/12">
+      <mat-card class="demo-inline-calendar-card" (click)="handleCalendarClick()">
+        <mat-calendar [(selected)]="selected"></mat-calendar>
+      </mat-card>
+    </div>
+    <div class="w-7/12">
+
+      <div class="shadow p-2 flex flex-col gap-[14px]" *ngFor="let item of schedule | paginate: config; let index = index">
+        <div class="book_description border-2 rounded-xl p-3 mt-[14px]">
+          <div
+            class="flex flex-wrap justify-between items-center border-dotted pb-[14px] border-b-2"
+          >
+            <div class="flex gap-[14px]">
+              <div class="w-[40px] h-[40px]">
+                <img
+                  class="rounded-full"
+                  src="https://cdn-healthcare.hellohealthgroup.com/2023/07/1689649117_64b5ffdd022285.05077192.jpg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p class="text-[13px] font-semibold">
+                  Bệnh nhân . {{item.patients.name}}
+                </p>
+                <p class="text-[11px]">Xem thông tin bệnh nhân</p>
+              </div>
+            </div>
+            <div  class="bg-green-300 p-1 rounded-lg text-[12px]" [ngStyle]="{'background-color': item.isEnable === 2 ? 'red' : item.codeVideoCall!=null ? 'yellow': 'green-300'}">
+              <span><button (click)="goToVideoCall(item)">video Call</button></span>
+            </div>
+          </div>
+          <div class="">
+            <div>
+              <div class="flex flex-wrap gap-[14px] mt-[14px] items-center">
+                <div class="w-[40px]">
+                  <div class="flex justify-center">
+                    <mat-icon>access_time</mat-icon>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-[12px]">{{item.time}}</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <pagination-controls *ngIf="data!=''" (pageChange)="pageChanged($event)" previousLabel="Trang trước" nextLabel="Trang sau"></pagination-controls>
+    </div>
+  </div>
+</div>

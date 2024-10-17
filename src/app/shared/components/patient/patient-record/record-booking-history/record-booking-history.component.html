@@ -1,0 +1,63 @@
+<div class="booking_hisroty">
+    <p class="font-bold text-[27px] text-left">Lịch sử đặt chỗ</p>
+    <div class="flex flex-wrap gap-[14px] mt-[24px] border-b-2 ">
+        <div class="p-1" style="border-bottom:1px solid #3778e0; ">
+            <p class="font-semibold " style="color: #3778e0;">Lịch hẹn sắp đến ({{filteredSchedule.length}})</p>
+        </div>
+        <div class="p-1" style="border-bottom:1px solid #3778e0;">
+            <p class="font-semibold " style="color: #3778e0;">Hoàn thành (0)</p>
+        </div>
+        <div class="p-1" style="border-bottom:1px solid #3778e0;">
+            <p class="font-semibold" style="color: #3778e0;">Lịch sử đặt chỗ ({{filteredHisttory.length}})</p>
+        </div>
+    </div>
+    <div *ngFor="let item of filteredSchedule" >
+    <div class="book_description border-2 rounded-xl p-3 mt-[14px]" >
+        <div class="flex flex-wrap justify-between items-center border-dotted pb-[14px] border-b-2">
+            <div class="flex gap-[14px]">
+                <div class="w-[40px] h-[40px]">
+                    <img class="rounded-full" src="https://cdn-healthcare.hellohealthgroup.com/2023/07/1689649117_64b5ffdd022285.05077192.jpg" alt="">
+
+                </div>
+                <div>
+                    <p class="text-[13px] font-semibold">BS.{{item.doctor.name}}</p>
+                    <p class="text-[11px]">{{item.doctor.specialist?.name}}</p>
+                </div>
+            </div>
+
+            <div  class="bg-green-300 p-1 rounded-lg text-[12px]" [ngStyle]="{'background-color': item.doctor.isEnable === 2 ? 'red' : item.codeVideoCall!=null ? 'yellow': 'green-300'}">
+              <span><button (click)="goToVideoCall(item)">video Call</button></span>
+          </div>
+        </div>
+        <div class="opacity-40 cursor-not-allowed">
+            <div>
+                <div class="flex flex-wrap gap-[14px] mt-[14px] items-center ">
+                    <div class="w-[40px] ">
+                        <div class="flex justify-center">
+                            <mat-icon >access_time</mat-icon>
+
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-[12px]"><span class="font-semibold ">{{item.date | date:'EEEE, MMMM - d, y' }}</span> • {{item.time}}</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="flex flex-wrap gap-[14px] mt-[14px] items-center ">
+                    <div class="w-[40px] ">
+                        <div class="flex justify-center">
+                            <mat-icon> location_on</mat-icon>
+
+                        </div>
+                    </div>
+                    <div>
+                        <!-- <p class="text-[12px] font-semibold">Dr. Marie Đà Nẵng</p> -->
+                        <p lass="text-[12px] ">{{item.doctor.workAddress}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+    </div>
+</div>

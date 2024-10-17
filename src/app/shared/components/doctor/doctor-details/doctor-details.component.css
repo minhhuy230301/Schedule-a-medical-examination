@@ -1,0 +1,7 @@
+.disabled-time {
+  opacity: 0.5; /* hoặc giá trị khác tùy thuộc vào độ mờ bạn mong muốn */
+  pointer-events: none;
+}
+h2{
+  color: red;
+}

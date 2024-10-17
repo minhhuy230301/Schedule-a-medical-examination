@@ -1,0 +1,242 @@
+<app-header *ngIf="getRoles() === 'ROLE_USER'"></app-header>
+<app-header-doctor *ngIf="getRoles() === 'ROLE_DOCTOR'"></app-header-doctor>
+<div>
+  <div class="container-xl">
+    <div class="flex flex-wrap items-center mt-[24px] mb-[24px] pl-5">
+      <div class="border-r-2 pr-3">
+        <div class="rounded-full bg-gray-300 flex items-center p-1">
+          <mat-icon>home</mat-icon>
+        </div>
+      </div>
+      <div class="pl-3">
+        <span>{{postDto[0].topic?.name}}</span>
+      </div>
+    </div>
+    <div class="flex pt-[54px] flex-col items-center text-center">
+      <p class="text-2xl font-semibold">{{postDto[0].topic?.name}}</p>
+      <div
+        class="w-[768px] mt-3 text-left"
+        style="border: 1px solid rgb(212, 204, 204); padding: 27px 30px"
+      >
+        <p>
+          {{postDto[0].topic?.description}}
+        </p>
+      </div>
+    </div>
+    <!-- Kiến thức chung -->
+    <div class="mt-[50px]">
+      <h3 class="text-2xl font-semibold">Kiến thức chung</h3>
+      <div class="flex gap-5 mt-[24px]">
+        <div class="w-6/12">
+          <img
+          [src]="postDto[0].image"
+            alt=""
+            class="w-100 rounded-xl h-[420px]"
+          />
+          <div class="w-100 mt-2">
+            <p class="font-bold text-blue-500 mt-2 ">SỨC KHỎE RĂNG MIỆNG</p>
+            <h4 class="w-100 font-medium text-[30px] mt-2">
+              <a [routerLink]="['postContent/', postDto[0].id]"> {{postDto[0].name}}</a>
+            </h4>
+            <p class="mt-2 name-3" [innerHTML]="sanitizeHtml(postDto[0].description)">
+
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-6/12 grid"
+          style="
+            grid-template-columns: calc(50% - 16px) calc(50% - 16px);
+            gap: 16px 32px;
+          "
+        >
+        <div *ngFor="let i of postDto.slice(1) | paginate: config; let index = index">
+          <div class="flex flex-col w-100">
+            <img
+            [src]="i.image"
+              alt=""
+              class="w-100 rounded-xl h-[250px]"
+            />
+            <div class="w-100 mt-2">
+              <p class="font-bold text-blue-500 mt-2">SỨC KHỎE RĂNG MIỆNG</p>
+              <h4 class="w-100 font-medium mt-2">
+               <a [routerLink]="['postContent/', i.id]"> {{i.name}}</a>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <pagination-controls *ngIf="!data" (pageChange)="pageChanged($event)" previousLabel="Trang trước" nextLabel="Trang sau"></pagination-controls>
+      </div>
+      </div>
+    </div>
+    <!--  -->
+    <!-- Khám phá thêm các chuyên mục -->
+    <div class="mt-[50px] w-[100%]">
+      <h3 class="text-2xl font-semibold">Khám phá thêm các chuyên mục</h3>
+      <div class="relativeCategoties__menu flex gap-[24px] mt-[24px] w-[100%]" style="overflow-x: auto;">
+        <div  *ngFor="let item of topic" class="relativeCategoties__menu__wrapper">
+          <a (click)="onSelect(item.id)">
+        <!-- <a href="" class="relativeCategoties__menu__wrapper"> -->
+          <div
+            class="relativeCategoties__menu__banner h-[63px] min-h-[102px] mt-[10px]"
+          >
+            <img
+              class="object-contain"
+              [src]="item.image"
+              alt=""
+            />
+          </div>
+          <div class="relativeCategoties__menu__content mt-[10px]">
+            <p class="font-bold text-black">{{item.name}}</p>
+          </div>
+        </a>
+      </div>
+        <!-- <a href="" class="relativeCategoties__menu__wrapper">
+          <div
+            class="relativeCategoties__menu__banner h-[63px] min-h-[102px] mt-[10px]"
+          >
+            <img
+              class="object-contain"
+              src="https://cdn.hellobacsi.com/wp-content/uploads/2021/03/Oral-Health.png"
+              alt=""
+            />
+          </div>
+          <div class="relativeCategoties__menu__content mt-[10px]">
+            <p class="font-bold text-black">Sức khoẻ răng miệng</p>
+          </div>
+        </a>
+        <a href="" class="relativeCategoties__menu__wrapper">
+          <div
+            class="relativeCategoties__menu__banner h-[63px] min-h-[102px] mt-[10px]"
+          >
+            <img
+              class="object-contain"
+              src="https://cdn.hellobacsi.com/wp-content/uploads/2021/03/Oral-Health.png"
+              alt=""
+            />
+          </div>
+          <div class="relativeCategoties__menu__content mt-[10px]">
+            <p class="font-bold text-black">Sức khoẻ răng miệng</p>
+          </div>
+        </a>
+        <a href="" class="relativeCategoties__menu__wrapper">
+          <div
+            class="relativeCategoties__menu__banner h-[63px] min-h-[102px] mt-[10px]"
+          >
+            <img
+              class="object-contain"
+              src="https://cdn.hellobacsi.com/wp-content/uploads/2021/03/Oral-Health.png"
+              alt=""
+            />
+          </div>
+          <div class="relativeCategoties__menu__content mt-[10px]">
+            <p class="font-bold text-black">Sức khoẻ răng miệng</p>
+          </div>
+        </a>
+        <a href="" class="relativeCategoties__menu__wrapper">
+          <div
+            class="relativeCategoties__menu__banner h-[63px] min-h-[102px] mt-[10px]"
+          >
+            <img
+              class="object-contain"
+              src="https://cdn.hellobacsi.com/wp-content/uploads/2021/03/Oral-Health.png"
+              alt=""
+            />
+          </div>
+          <div class="relativeCategoties__menu__content mt-[10px]">
+            <p class="font-bold text-black">Sức khoẻ răng miệng</p>
+          </div>
+        </a>
+        <a href="" class="relativeCategoties__menu__wrapper">
+          <div
+            class="relativeCategoties__menu__banner h-[63px] min-h-[102px] mt-[10px]"
+          >
+            <img
+              class="object-contain"
+              src="https://cdn.hellobacsi.com/wp-content/uploads/2021/03/Oral-Health.png"
+              alt=""
+            />
+          </div>
+          <div class="relativeCategoties__menu__content mt-[10px]">
+            <p class="font-bold text-black">Sức khoẻ răng miệng</p>
+          </div>
+        </a> -->
+      </div>
+    </div>
+    <!--  -->
+    <!-- Xem thêm về sức khoẻ răng miệng -->
+    <!-- <div class="mt-[50px]">
+      <h3 class="text-2xl font-semibold">Khám phá thêm các chuyên mục</h3>
+      <div class="flex flex-col">
+        <div
+          class="mt-[24px] flex gap-[14px] pb-[24px]"
+          style="
+            width: calc((100% - 300px) - 8%);
+            border-bottom: 1px dotted rgb(202, 195, 195);
+          "
+        >
+          <div class="max-w-[200px] min-w-[200px]">
+            <img
+              class="rounded-xl"
+              src="https://cdn.hellobacsi.com/wp-content/uploads/2023/08/phun-moi-bao-lau-thi-duoc-danh-rang-1.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <div class="flex justify-between items-center">
+              <p style="color: #3778e0">Các vấn đề răng miệng khác</p>
+              <mat-icon class="cursor-pointer" style="color: rgb(31, 162, 31)"
+                >bookmark</mat-icon
+              >
+            </div>
+            <p class="font-medium mt-2">
+              Phun môi bao lâu thì được đánh răng ? Cách vệ sinh răng miệng
+              chuẩn y khoa
+            </p>
+            <p class="mt-[2rem]">
+              Phun môi là một kỹ thuật làm hồng môi, khử thâm môi được nhiều chị
+              em phụ nữ lựa chọn hiện nay. Nhưng phun môi bao lâu thì được đánh
+              răng? Phun môi
+            </p>
+          </div>
+        </div>
+        <div
+          class="mt-[24px] flex gap-[14px] pb-[24px]"
+          style="
+            width: calc((100% - 300px) - 8%);
+            border-bottom: 1px dotted rgb(202, 195, 195);
+          "
+        >
+          <div class="max-w-[200px] min-w-[200px]">
+            <img
+              class="rounded-xl"
+              src="https://cdn.hellobacsi.com/wp-content/uploads/2023/08/phun-moi-bao-lau-thi-duoc-danh-rang-1.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <div class="flex justify-between items-center">
+              <p style="color: #3778e0">Các vấn đề răng miệng khác</p>
+              <mat-icon class="cursor-pointer" style="color: rgb(31, 162, 31)"
+                >bookmark</mat-icon
+              >
+            </div>
+            <p class="font-medium mt-2">
+              Phun môi bao lâu thì được đánh răng ? Cách vệ sinh răng miệng
+              chuẩn y khoa
+            </p>
+            <p class="mt-[2rem]">
+              Phun môi là một kỹ thuật làm hồng môi, khử thâm môi được nhiều chị
+              em phụ nữ lựa chọn hiện nay. Nhưng phun môi bao lâu thì được đánh
+              răng? Phun môi
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!--  -->
+  </div>
+</div>
+
+<app-footer></app-footer>

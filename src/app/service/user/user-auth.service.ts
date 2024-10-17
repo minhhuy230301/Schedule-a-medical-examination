@@ -17,13 +17,23 @@ export class UserAuthService {
     }
     return [];
   }
+  setAccount(account:[]){
+    localStorage.setItem("account",JSON.stringify(account));
+ }
+
+ getAccount(): []{
+   const accountString = localStorage.getItem("account");
+   if(accountString){
+     return JSON.parse(accountString);
+   }
+   return [];
+ }
   setToken(jwtToken:string){
     localStorage.setItem("jwtToken",jwtToken);
   }
 
   //??"" giong voi toan tu 3 ngoi( neu ham duoi ma null thi no se tra ve "")
   getToken():string{
-    console.log("tokennnnnnnnnn"+localStorage.getItem("jwtToken"));
      return localStorage.getItem("jwtToken")??"";
   }
   clear(){

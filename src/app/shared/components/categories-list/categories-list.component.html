@@ -1,0 +1,88 @@
+<app-header *ngIf="getRoles() === 'ROLE_USER'"></app-header>
+<app-header-doctor *ngIf="getRoles() === 'ROLE_DOCTOR'"></app-header-doctor>
+<div class="container-xl">
+  <div class="flex flex-wrap items-center mt-[24px] mb-[24px] pl-5">
+    <div class="border-r-2 pr-3">
+      <div class="rounded-full bg-gray-300 flex items-center p-1">
+        <mat-icon>home</mat-icon>
+      </div>
+    </div>
+    <div class="pl-3">
+      <span>Tất cả chuyên mục</span>
+    </div>
+  </div>
+  <div class="text-center">
+    <p class="text-[20px] font-semibold">Tìm kiếm chuyên mục</p>
+  </div>
+  <!-- Search -->
+  <div class="mt-[24px]">
+    <div class="mb-3">
+      <div class="relative mb-4 flex w-full flex-wrap items-stretch">
+        <input
+          type="search"
+          class="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+          placeholder="Search"
+          aria-label="Search"
+          aria-describedby="button-addon1"
+        />
+
+        <!--Search button-->
+        <button
+          class="relative z-[2] flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+          type="button"
+          id="button-addon1"
+          data-te-ripple-init
+          data-te-ripple-color="light"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="h-5 w-5"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- content -->
+  <div>
+    <!-- <div>
+      <img class="object-contain w-[63px] h-[63px]" src="https://cdn.hellobacsi.com/wp-content/uploads/2021/03/Oral-Health.png" alt="">
+     </div> -->
+  </div>
+  <!-- List categories -->
+  <div  class="flex flex-wrap gap-[14px] justify-start pl-5 mb-[34px]">
+    <!-- <div *ngFor="let i of topic"> -->
+    <div
+    *ngFor="let i of topic"
+      (click)="onSelect(i.id)"
+      class="flex flex-col w-[15%] items-center p-3 text-center"
+      style="
+        border: 1px solid rgb(228, 232, 236);
+        box-shadow: rgba(40, 74, 117, 0.08) 0px 5px 12px;
+        border-radius: 6px;
+      "
+    >
+      <div>
+        <img
+          class="object-contain w-[63px] h-[63px]"
+          [src]="i.image"
+          alt=""
+        />
+      </div>
+      <div class="mt-[10px]">
+        <p class="text-[1rem] font-bold">{{i.name}}</p>
+      </div>
+    <!-- </div> -->
+</div>
+  </div>
+  <router-outlet></router-outlet>
+  <!--  -->
+</div>
+<app-footer></app-footer>

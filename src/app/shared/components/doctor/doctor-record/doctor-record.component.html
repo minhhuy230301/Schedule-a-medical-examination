@@ -1,0 +1,92 @@
+<div class="container-xl">
+  <div class="flex flex-row gap-[66px] mt-[24px] mb-[54px]">
+    <div class="menu_left shadow p-3" style="height: 336px">
+      <div class="overflow-hidden">
+        <div>
+          <div
+            routerLink="/forDoctor/profile/information"
+            class="flex flex-wrap gap-4 mt-[10px] cursor-pointer"
+          >
+            <mat-icon>person</mat-icon>
+            <span>Hồ sơ</span>
+          </div>
+        </div>
+
+        <div>
+          <div
+            routerLink="/forDoctor/profile/health"
+            class="flex flex-wrap gap-4 mt-[15px] cursor-pointer"
+          >
+            <mat-icon>accessibility_new</mat-icon>
+            <span>Sức khoẻ của tôi</span>
+          </div>
+        </div>
+
+        <div>
+          <div
+            routerLink="/forDoctor/profile/saved"
+            class="flex flex-wrap gap-4 mt-[15px] cursor-pointer"
+          >
+            <mat-icon>bookmark</mat-icon>
+            <span>Đã lưu</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex flex-wrap gap-4 mt-[15px] cursor-pointer">
+            <mat-icon>question_answer</mat-icon>
+            <span>Cộng đồng</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex flex-wrap gap-4 mt-[15px] cursor-pointer">
+            <mat-icon>settings</mat-icon>
+            <span>Thiết lập tài khoản</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex flex-wrap gap-4 mt-[15px] cursor-pointer">
+            <mat-icon>help_outline</mat-icon>
+            <span>Trợ giúp</span>
+          </div>
+        </div>
+
+        <div>
+          <div
+            (click)="logout()"
+            class="flex flex-wrap gap-4 mt-[15px] cursor-pointer"
+          >
+            <mat-icon>arrow_right_alt</mat-icon>
+            <span>Đăng xuất</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!checkLogin" class="profile flex flex-col gap-[14px] w-[668px]">
+      <!-- Hồ sơ -->
+      <!-- <app-record-profile></app-record-profile> -->
+      <!--  -->
+      <!-- Sức khoẻ của tôi -->
+      <!-- <app-record-health></app-record-health> -->
+      <!--  -->
+      <!-- Đã lưu -->
+      <!-- <app-record-saved></app-record-saved> -->
+      <!--  -->
+      <!-- Lịch sử đặt chỗ -->
+      <!-- <app-record-booking-history></app-record-booking-history> -->
+      <!--  -->
+      <p>
+        Bạn chưa đăng nhập, vui lòng đăng nhập
+        <span class="text-blue-500 text-center" routerLink="/login"
+          >tại đây</span
+        >
+      </p>
+    </div>
+    <div *ngIf="checkLogin" class="profile flex flex-col gap-[14px] w-[668px]">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

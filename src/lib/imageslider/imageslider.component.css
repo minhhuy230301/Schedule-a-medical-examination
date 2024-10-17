@@ -1,0 +1,39 @@
+.mat-card {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+
+.imgdiv {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border: 1px solid black;
+  background-color: #f7f1d5;
+}
+
+.img-area {
+  width: 100%;
+  min-height: 100%;
+}
+
+.next {
+  float: right;
+}
+
+.prev {
+  float: left;
+}
+
+.mat-card-header {
+  display: unset !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.center {
+  margin-top: -260px;
+  margin-left: 138px;
+}

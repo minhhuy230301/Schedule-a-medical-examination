@@ -1,27 +1,17 @@
-import { Pots } from './../../../../model/pots';
-import { User } from './../../../../model/user';
-import { UserService } from './../../../../service/user/user.service';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {AngularFireStorage} from '@angular/fire/compat/storage';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { finalize } from 'rxjs';
-import { Topic } from 'src/app/model/topic';
-import { PotsService } from 'src/app/service/pots/pots.service';
 @Component({
   selector: 'app-pots',
   templateUrl: './pots.component.html',
   styleUrls: ['./pots.component.css']
 })
-export class PotsComponent implements OnInit{
+export class PotsComponent {
   potsFormCreate:FormGroup;
-  message:any;
-  post:Pots[]=[];
-  topic:Topic[]=[]
-constructor(private http:HttpClient,private fireStotage:AngularFireStorage,
-  private userService:UserService,
-  private postService:PotsService){
 
+constructor(private http:HttpClient,private fireStotage:AngularFireStorage){
   this.potsFormCreate = new FormGroup(
     {
       name: new FormControl('',[Validators.required]),
@@ -47,25 +37,16 @@ constructor(private http:HttpClient,private fireStotage:AngularFireStorage,
       image6: new FormControl(''),
       topic: new FormControl('')
   })
-
-   this.postService.getAllTopic().subscribe(next=>{
-    console.log(next);
-    this.topic = next;
-    this.potsFormCreate.controls['topic'].setValue(this.topic[0]);
-  },erorr =>{
-
-  })
-
 }
-  ngOnInit(): void {}
-
 
  onImageSelected(event:any){
   const file = event.target.files[0];
   const path = `pots/${file.name}`;
   const fileref = this.fireStotage.ref(path);
+  console.log('ccccccccc');
   this.fireStotage.upload(path,file).snapshotChanges().pipe(
     finalize(()=>{
+      console.log('bbbbbbb');
         fileref.getDownloadURL().subscribe((url) =>{
          this.potsFormCreate.controls['image'].setValue(url);
         console.log(this.potsFormCreate.controls['image']);
@@ -74,30 +55,18 @@ constructor(private http:HttpClient,private fireStotage:AngularFireStorage,
     })
   ).subscribe();
 }
+  // if(file){
+  //   // this.data.image = file;
+  //   const path = `pots/${file.name}`;
+  //   const uploadTask = await this.fireStotage.upload(path,file);
+  //   const url = await uploadTask.ref.getDownloadURL();
+  //   console.log(url);
+  // }
 
 
   submit(){
     console.log('dddddddd');
-    this.postService.addPots(this.potsFormCreate.getRawValue()).subscribe(response =>{
-      console.log(response);
-    })
   }
-
-
-   // clickHere(){
-  //   const data:User={
-  //     "username": "duyet233",
-  //     "password": "duyet187"
-  //   }
-  //     this.userService.forAdmin().subscribe(response=>{
-  //       console.log(response+"aaaaaaaaaaa");
-  //       this.message= "response";
-  //     },erorr=>{
-  //       console.log(erorr)
-  //     });
-  //   }
-
-
   // onSubmit(){
   //     const formData = new FormData();
   //     formData.append('name',this.data.name);

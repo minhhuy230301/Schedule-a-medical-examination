@@ -17,13 +17,13 @@
     </div>
     <div class="nav__left">
       <ul class="flex flex-row gap-16 justify-around px-20 -b pb-4">
-        <li class="header-menu-item">Thông tin các loại bệnh</li>
-        <li class="header-menu-item">Đặt lịch hẹn</li>
-        <li class="header-menu-item">Chuẩn đoán bệnh</li>
-        <li routerLink="/login" class="header-menu-item">Login</li>
-        <li class="header-menu-item">Trending</li>
+        <li routerLink="/categories" class="header-menu-item">Chuyên mục</li>
+        <li routerLink="/specialist" class="header-menu-item">Đặt lịch hẹn</li>
+        <li routerLink="/diagnostic" class="header-menu-item">Chuẩn đoán bệnh</li>
+        <li *ngIf="!isFlg" routerLink="/login" class="header-menu-item">Đăng nhập</li>
+        <li  *ngIf="isFlg" routerLink="/user/profile" class="header-menu-item">Hồ sơ</li>
       </ul>
     </div>
   </div>
-  
+
 </nav>

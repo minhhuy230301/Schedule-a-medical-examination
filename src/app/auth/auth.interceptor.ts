@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { HttpErrorResponse, HttpEvent, HttpHandler, HTTP_INTERCEPTORS, HttpInterceptor, HttpRequest } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Observable, catchError, throwError } from "rxjs";
 import { UserAuthService } from "../service/user/user-auth.service";
 import { Injectable } from '@angular/core';
@@ -11,13 +11,11 @@ export class AuthInterceptor implements HttpInterceptor{
   }
 //   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-// // lay token thi cach 1 khoang ngay sau True
-//     if(req.headers.get('No-Auth')==='True'){
-//       console.log(req.clone())
+
+//     if(req.headers.get("No-Auth")==="True "){
 //       return next.handle(req.clone());
 //     }
 //     const token = this.userAuthService.getToken();
-//     console.log("duyettttttttttttt  "+token)
 //     this.addToken(req,token);
 //     return next.handle(req).pipe(
 //       catchError(
@@ -37,14 +35,11 @@ export class AuthInterceptor implements HttpInterceptor{
 //   {
 //       return request.clone({
 //         setHeaders:{
-//           'Content-Type': 'application/json',
-//           'Authorization': `Bearer ${token}`,
-//           'Access-Control-Allow-Origin': 'http://localhost:4200',
-//           'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, PATCH, OPTIONS'
+//           Authorization: `Bearer ${token}`
 //         }
 //       });
 //   }
-
+// }
 intercept(req: HttpRequest<any>, next: HttpHandler) {
   let authReq = req;
   const tokenValue = this.userAuthService.getToken();
@@ -65,4 +60,3 @@ intercept(req: HttpRequest<any>, next: HttpHandler) {
 export const httpInterceptorProviders = [
 { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor  , multi: true }
 ];
-

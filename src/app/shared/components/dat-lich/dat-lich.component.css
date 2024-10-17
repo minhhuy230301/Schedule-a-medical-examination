@@ -1,0 +1,370 @@
+* {
+  box-sizing: border-box;
+}
+.search_pSearchPage__Dk6vU .search_resultsContainer__nmEsF .search_doctors__OIPrK, .search_pSearchPage__Dk6vU .search_resultsContainer__nmEsF .search_doctors__OIPrK .search_filter__Gdo4q {
+  display: flex;
+  flex-direction: column;
+}
+.search_pSearchPage__Dk6vU .search_filter__Gdo4q {
+  display: flex;
+  min-height: 35px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  margin-bottom: 26px;
+}
+.search_pSearchPage__Dk6vU .search_filter__Gdo4q .search_filterWithNotice__rdSKr {
+  align-self: flex-start;
+}
+.search_pSearchPage__Dk6vU .search_filter__Gdo4q .search_filterWithNotice__rdSKr {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.search_pSearchPage__Dk6vU .search_resultsContainer__nmEsF .search_doctors__OIPrK .search_totalResults__P9EqZ {
+  align-self: flex;
+  margin: 10px 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+}
+.search_pSearchPage__Dk6vU .search_filter__Gdo4q .search_filterIcon__27Mmv {
+   padding: 0;
+}
+.ITgol3T[data-color=ghost] {
+  background-color: transparent;
+  border: 0;
+  color: #2d87f3;
+}
+.ITgol3T[data-size=md] {
+  font-size: 14px;
+  line-height: 22px;
+  padding: 9px 24px;
+}
+.ITgol3T[data-color=ghost] {
+  background-color: transparent;
+  border: 0;
+  color: #2d87f3;
+}
+.search_pSearchPage__Dk6vU .search_filter__Gdo4q .search_filterIcon__27Mmv {
+  padding: 0;
+}
+.ITgol3T[data-color=ghost] {
+  background-color: transparent;
+  border: 0;
+  color: #2d87f3;
+}
+.ITgol3T[data-size=md] {
+  font-size: 14px;
+  line-height: 22px;
+  padding: 9px 24px;
+}
+.ITgol3T[data-color=ghost] {
+  background-color: transparent;
+  border: 0;
+  color: #2d87f3;
+}
+.ITgol3T[data-size=md] {
+  font-size: 14px;
+  line-height: 22px;
+  padding: 9px 24px;
+}
+.ITgol3T {
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color .3s,border-color .3s;
+  width: auto;
+}
+button {
+  overflow: visible;
+}
+button, input, select, textarea {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: 0 0;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  outline: none;
+}
+.ITgol3T .cD-HMFz {
+  align-items: center;
+  display: flex;
+}
+.fcOZyS {
+  align-self: flex-start;
+  margin: 22px 0px;
+}
+.mantine-5xc3k {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  max-width: 100%;
+  border-bottom: 1px solid #e4e8ec;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-column-gap: 1.25rem;
+  column-gap: 1.25rem;
+}
+.mantine-1jdwn5m.active {
+  color: #2d87f3;
+  border-bottom: 3px solid #2d87f3;
+  bottom: -1px;
+  position: relative;
+}
+.mantine-1jdwn5m {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 4px;
+}
+li, ol, ul {
+  list-style: none;
+}
+.mantine-1jdwn5m[data-event-category]>* {
+  pointer-events: none;
+}
+.mantine-j3bl35 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.mantine-bxm8ty {
+  font-family: Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Oxygen,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  color: #2d87f3;
+  font-size: inherit;
+  line-height: 1.55;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+}
+.doctorInfo_mDoctorInfo__9z_ou:not(:last-child) {
+  margin-bottom: 24px;
+}
+.doctorInfo_mDoctorInfo__9z_ou {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 16px 16px 0;
+  border: 1px solid #dbdfe5;
+  border-radius: 6px;
+}
+.doctorInfo_mDoctorInfo__9z_ou .doctorInfo_doctorHeader__INC5Z, .doctorInfo_mDoctorInfo__9z_ou .doctorInfo_hospital___BafV {
+  display: flex;
+}
+.doctorInfo_mDoctorInfo__9z_ou .doctorInfo_doctorHeader__INC5Z {
+  justify-content: space-between;
+}
+.YksMM[data-is-mobile="true"] {
+  flex-direction: column;
+  gap: 12px;
+}
+.YksMM {
+  display: flex;
+  gap: 16px;
+}
+.doctorInfo_mDoctorInfo__9z_ou .doctorInfo_doctorInfoWrapper__DZJmR a {
+  cursor: pointer;
+}
+.doctorInfo_mDoctorInfo__9z_ou a {
+  text-decoration: none;
+}
+.iSfcAU {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  object-position: center center;
+}
+.doctorInfo_mDoctorInfo__9z_ou .doctorInfo_doctorInfoWrapper__DZJmR a {
+  cursor: pointer;
+}
+.doctorInfo_mDoctorInfo__9z_ou a {
+  text-decoration: none;
+}
+.wIj6fkD[data-size=lg], .wIj6fkD[data-size=md] {
+  font-size: 16px;
+  line-height: 28px;
+}
+.wIj6fkD[data-type=semiBold] {
+  font-weight: 600;
+}
+.wIj6fkD[data-size=p4] {
+  font-size: 12px;
+  line-height: 18px;
+}
+.wIj6fkD[data-size=p4] {
+  font-size: 12px;
+  line-height: 18px;
+}
+.wIj6fkD {
+  color: var(--custom-color,#262626);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.doctorInfo_mDoctorInfo__9z_ou .doctorInfo_tags__ZFplj {
+  margin-top: 8px;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.dYRCpE[data-tag-type="blue"] {
+  background: rgb(227, 242, 255);
+  border: 1px solid rgb(45, 135, 243);
+}
+.doctorInfo_mDoctorInfo__9z_ou .doctorInfo_doctorTag__tS_ZL {
+  display: inline-block;
+}
+.dYRCpE {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 2px 8px;
+  background: rgb(248, 249, 252);
+  border: 1px solid rgb(248, 249, 252);
+  height: 25px;
+  border-radius: 24px;
+}
+.dYRCpE[data-tag-type="blue"] p {
+  color: rgb(45, 135, 243);
+}
+.wIj6fkD[data-size=p4] {
+  font-size: 14px;
+  /* line-height: 2px; */
+}
+.dYRCpE p {
+  color: rgb(89, 89, 89);
+}
+.doctorInfo_mDoctorInfo__9z_ou .doctorInfo_pricing__hGSxo {
+  display: flex;
+  align-items: center;
+}
+.geKcam {
+  margin-top: 8px;
+}
+.bTDXbJ {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-top: 4px;
+  gap: 8px;
+}
+.mantine-824czz {
+  margin-bottom: 21px;
+}
+.jTtcCL {
+  display: flex;
+  width: calc(100% + 32px);
+  height: 66px;
+  padding: 12px 16px;
+  margin-top: 16px;
+  margin-left: -16px;
+  background-color: rgb(248, 249, 252);
+  gap: 8px;
+}
+.glDtei {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid rgb(228, 232, 236);
+}
+.pointer {
+  cursor: pointer;
+}
+.jXanLe {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.lfLKLl {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 6px;
+}
+.lfLKLl p {
+  display: -webkit-box;
+  overflow: hidden;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+}
+.ETAjx {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgb(89, 89, 89);
+}
+.WPRIi {
+  flex-shrink: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgb(89, 89, 89);
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+.WPRIi svg {
+  margin: 5px;
+}
+.WPRIi a {
+  text-decoration: none;;
+}
+.jXanLe svg {
+  vertical-align: middle;
+}
+.bEeaYU[data-color="primary"][data-size="md"] {
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  text-transform: capitalize;
+}
+.ITgol3T[data-color=primary] {
+  background-color: #2d87f3;
+  border: 1px solid #2d87f3;
+  color: #fff;
+}
+.S2kaD9B, .fAwTdkg {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.S2kaD9B, .fAwTdkg {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,23 @@
+div {
+  height: 750px;
+  width: 650px;
+  position: relative;
+  padding: 20px;
+}
+
+div img {
+  object-position: center;
+  display: block;
+  height: 95%;
+  width: 95%;
+}
+
+#close-icon {
+  position: absolute;
+  top: 3px;
+  right: 7px;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}

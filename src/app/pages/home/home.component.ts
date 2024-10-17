@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DiseaseDto } from 'src/app/modelDTO/disease-dto';
 import { GetApiWikipediaService } from 'src/app/service/wikipedia/get-api-wikipedia.service';
 
 @Component({
@@ -7,16 +8,8 @@ import { GetApiWikipediaService } from 'src/app/service/wikipedia/get-api-wikipe
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  pageTilte = "Hôn mê" ;
-  pageContent:any;
-  constructor(private getApi : GetApiWikipediaService){}
+
+  constructor(){}
   ngOnInit(): void {
-    console.log("aaaaaaaaaaa");
-  this.getApi.getPageContent(this.pageTilte).subscribe((next:any)=>{
-    this.pageContent = next;
-
-    console.log(next);
-
-  })
 }
 }

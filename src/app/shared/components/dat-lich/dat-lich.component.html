@@ -1,0 +1,113 @@
+<app-header></app-header>
+<div class ="search_pSearchPage__Dk6vU">
+  <div class="container_aContainer__Ir6Ej">
+      <div class="search_resultsContainer__nmEsF">
+          <div class="search_doctors__OIPrK">
+            <p *ngIf="!checkNull" style="margin-top: 70px;text-align: center;margin-bottom: 70px;color: red;font-size: 30px;">{{message}}</p>
+            <div class="search_filter__Gdo4q" *ngIf="checkNull">
+              <div class="search_filterWithNotice__rdSKr">
+                <h1 class="search_totalResults__P9EqZ"> {{doctor.length}} Bác sĩ {{doctor[0].specialist?.name}} </h1>
+              </div>
+              <div class="indexstyled__StyledResultWrapper-sc-7979uj-2 cTxkxe">
+                <div class="indexstyled__StyledTabWrapper-sc-7979uj-1 fcOZyS">
+                  <ul class="mantine-5xc3k mantine-Tabs-root" role="tablist">
+                    <li class="mantine-1jdwn5m mantine-Tabs-item active" aria-selected="true" role="tab" data-event-category="Care" data-event-action="Doctor Tab Click" data-event-label="https://hellobacsi.com/care/tat-ca/bac-si/da-khoa/" tabindex="0" data-gtm-vis-first-on-screen-1361037_245="975" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="996" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">
+                      <div class="mantine-j3bl35 mantine-Tabs-itemInner">
+                        <p class="mantine-Text-root mantine-Text-root ___ref-itemLabel mantine-Tabs-label mantine-bxm8ty" data-event-category="Care" data-event-action="Doctor Tab Click" data-event-label="https://hellobacsi.com/care/tat-ca/bac-si/da-khoa/" data-gtm-vis-first-on-screen-1361037_245="976" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="997" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">Bác sĩ  </p>
+                      </div>
+                    </li>
+
+                  </ul>
+                </div>
+                <div class="doctorInfo_mDoctorInfo__9z_ou">
+                  <div class="doctorInfo_doctorInfoWrapper__DZJmR">
+                    <div class="doctorInfo_doctorHeader__INC5Z">
+                      <div data-is-mobile="false" class="indexstyled__StyledInfoLeftSide-sc-1r9v2nf-7 YksMM">
+                        <a href="/care/bac-si/bscki-vu-thi-hanh-nhan-2316/">
+                          <img src="https://cdn-healthcare.hellohealthgroup.com/2023/05/1684814602_646c3b0a2e0d79.24394004.jpg" data-event-category="Care" data-event-action="Doctor Click 1" data-event-label="https://hellobacsi.com/bac-si/bscki-vu-thi-hanh-nhan-2316/" class="indexstyled__StyledDoctorAvatar-sc-1r9v2nf-3 iSfcAU" data-gtm-vis-first-on-screen-1361037_245="978" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="999" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">
+                        </a>
+
+                        <div class="doctorInfo_doctorInfoHeader__duhDZ">
+                        <a data-event-category="Care" data-event-action="Doctor Click 1" data-event-label="https://hellobacsi.com/bac-si/bscki-vu-thi-hanh-nhan-2316/" href="/care/bac-si/bscki-vu-thi-hanh-nhan-2316/" data-gtm-vis-first-on-screen-1361037_245="979" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="999" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">
+
+                          <p data-size="md" data-type="semiBold" class="wIj6fkD ">{{doctor[0].name}}</p>
+
+                        </a>
+                        <a data-event-category="Care" data-event-action="Doctor Click 1" data-event-label="https://hellobacsi.com/bac-si/bscki-vu-thi-hanh-nhan-2316/" href="/care/bac-si/bscki-vu-thi-hanh-nhan-2316/" data-gtm-vis-first-on-screen-1361037_245="980" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="1000" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">
+                          <p data-size="p4" data-type="regular" class="wIj6fkD ">{{doctor[0].specialist?.name}}</p>
+                        </a>
+                        <div class="doctorInfo_tags__ZFplj">
+                          <a data-event-category="Care" data-event-action="Doctor Click 1" data-event-label="https://hellobacsi.com/bac-si/bscki-vu-thi-hanh-nhan-2316/" href="/care/bac-si/bscki-vu-thi-hanh-nhan-2316/" data-gtm-vis-first-on-screen-1361037_245="981" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="1000" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">
+                            <div class="indexstyled__StyledTag-sc-1r4nt7j-0 dYRCpE doctorInfo_doctorTag__tS_ZL" data-tag-type="blue">
+                              <p data-size="p4" data-type="regular" class="wIj6fkD ">Đặt lịch khám</p>
+                            </div>
+                          </a>
+                          <a data-event-category="Care" data-event-action="Doctor Click 1" data-event-label="https://hellobacsi.com/bac-si/bscki-vu-thi-hanh-nhan-2316/" href="/care/bac-si/bscki-vu-thi-hanh-nhan-2316/" data-gtm-vis-first-on-screen-1361037_245="981" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="1001" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">
+                            <div class="indexstyled__StyledTag-sc-1r4nt7j-0 dYRCpE doctorInfo_doctorTag__tS_ZL">
+                              <p data-size="p4" data-type="regular" class="wIj6fkD ">Dành cho người lớn</p>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="doctorInfo_pricing__hGSxo doctorInfo_isDesktop__XNwGY">
+                          <a data-event-category="Care" data-event-action="Doctor Click 1" data-event-label="https://hellobacsi.com/bac-si/bscki-vu-thi-hanh-nhan-2316/" href="/care/bac-si/bscki-vu-thi-hanh-nhan-2316/" data-gtm-vis-first-on-screen-1361037_245="982" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="1001" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">
+                            <div class="indexstyled__StyledPriceDoctorService-lv2yh8-0 bTDXbJ indexstyled__StyledPriceDoctorService-sc-1r9v2nf-4 geKcam" data-is-has-promotion="false">
+                              <div class="price-wrapper mantine-824czz">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M8 1.334A6.674 6.674 0 001.335 8a6.674 6.674 0 006.667 6.667A6.674 6.674 0 0014.667 8a6.674 6.674 0 00-6.666-6.666zm1.88 9.164c-.081.229-.195.428-.343.594a1.689 1.689 0 01-.532.403c-.106.052-.219.094-.338.127V12a.667.667 0 01-1.333 0v-.366a2.375 2.375 0 01-.379-.13 1.762 1.762 0 01-.584-.424 2.042 2.042 0 01-.408-.7 1.456 1.456 0 01-.094-.377l-.002-.055c0-.34.276-.614.615-.614a.6.6 0 01.59.442l.048.186c.052.155.119.269.206.362a.735.735 0 00.3.197c.11.038.225.057.341.057a.89.89 0 00.35-.064.702.702 0 00.405-.444c.034-.104.05-.216.05-.336 0-.138-.015-.258-.046-.363a.813.813 0 00-.153-.285 1.163 1.163 0 00-.274-.235 2.722 2.722 0 00-.409-.211 7.178 7.178 0 01-.755-.381 2.5 2.5 0 01-.582-.459 1.87 1.87 0 01-.376-.608 2.309 2.309 0 01-.133-.83c0-.278.04-.531.119-.76a1.768 1.768 0 011.171-1.135V4a.667.667 0 011.333 0v.468c.14.043.273.097.395.172.198.12.367.278.505.47.139.194.249.404.325.667.017.06.044.169.044.277 0 .339-.208.613-.613.613-.281 0-.475-.165-.58-.453-.04-.108-.099-.302-.18-.414a.658.658 0 00-.562-.292.75.75 0 00-.328.066.622.622 0 00-.228.181.742.742 0 00-.131.273 1.28 1.28 0 00-.043.338c0 .121.014.23.043.329.028.098.077.19.147.273.069.083.161.162.275.235.115.073.257.15.427.228.274.127.524.258.749.393.225.134.418.288.58.463.16.175.286.379.375.61a2.3 2.3 0 01.134.826c0 .288-.041.546-.122.775z" fill="#8C8C8C"></path>
+                                </svg>
+                              </div>
+                              <div>
+                                <p data-size="p4" data-type="regular" class="wIj6fkD " style="--custom-color: #595959;">Phí tư vấn ban đầu từ</p>
+                              </div>
+                              <div>
+                                <p data-size="p4" data-type="regular" class="wIj6fkD servicePrice" style="--custom-color: #009E5C;">200.000&nbsp;₫</p>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div data-event-category="Care" data-event-action="Hospital Click 1" data-event-label="https://hellobacsi.com/benh-vien/benh-vien-da-khoa-bao-son-1818/" data-is-mobile="false" class="indexstyled__StyledCardFooter-sc-1r9v2nf-2 jTtcCL" data-gtm-vis-first-on-screen-1361037_245="983" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="1002" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">
+                    <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: 40px; height: 40px; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
+                      <img data-event-category="Care" data-event-action="Hospital Click 1" data-event-label="https://hellobacsi.com/benh-vien/benh-vien-da-khoa-bao-son-1818/" src="https://cdn-healthcare.hellohealthgroup.com/2022/05/1652264816_627b8f70d5fa00.93661286.jpg?w=96&amp;q=75" decoding="async" data-nimg="fixed" class="indexstyled__StyledHospitalAvatar-sc-1r9v2nf-5 glDtei pointer" srcset="https://cdn-healthcare.hellohealthgroup.com/2022/05/1652264816_627b8f70d5fa00.93661286.jpg?w=48&amp;q=75 1x, https://cdn-healthcare.hellohealthgroup.com/2022/05/1652264816_627b8f70d5fa00.93661286.jpg?w=96&amp;q=75 2x" data-gtm-vis-first-on-screen-1361037_245="983" data-gtm-vis-total-visible-time-1361037_245="100" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="1002" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">
+                    </span>
+
+                    <div class="indexstyled__StyledHospitalInfo-sc-1r9v2nf-10 gLkMZS">
+                      <p data-size="p4" data-type="semiBold" class="wIj6fkD ">
+                        <a data-event-category="Care" data-event-action="Hospital Click 1" data-event-label="https://hellobacsi.com/benh-vien/benh-vien-da-khoa-bao-son-1818/" class="color-inherit" href="/care/benh-vien/benh-vien-da-khoa-bao-son-1818/" data-gtm-vis-first-on-screen-1361037_245="984" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="1003" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1" >{{doctor[0].workAddress}}</a>
+                      </p>
+
+                      <div class="indexstyled__StyledLocation-sc-1r9v2nf-8 jXanLe">
+                        <div class="indexstyled__StyledLocationAddress-sc-1r9v2nf-9 lfLKLl">
+                          <p class="indexstyled__StyledAddress-sc-1r9v2nf-12 ETAjx">
+                            <a style="color:whitesmoke ;" data-event-category="Care" data-event-action="Hospital Click 1" data-event-label="https://hellobacsi.com/benh-vien/benh-vien-da-khoa-bao-son-1818/" data-gtm-vis-first-on-screen-1361037_245="984" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="1003" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">Bệnh viện Đa khoa Bảo Sơn</a>
+                          </p>
+                        </div>
+                        <div class="indexstyled__StyledLocationDistance-sc-1r9v2nf-11 WPRIi">
+                          <svg width="4" height="4" data-event-category="Care" data-event-action="Hospital Click 1" data-event-label="https://hellobacsi.com/benh-vien/benh-vien-da-khoa-bao-son-1818/" data-gtm-vis-first-on-screen-1361037_245="985" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="1004" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">
+                            <circle cx="2" cy="2" r="2" fill="#BFBFBF"></circle>
+                          </svg>
+
+                        </div>
+                      </div>
+                    </div>
+                    <button (click)="nextPage(doctor[0].id)"  data-event-category="Care" data-event-action="Doctor Appointment Click" data-event-label="https://hellobacsi.com/care/tat-ca/bac-si/da-khoa/" class="ITgol3T indexstyled__StyledBookingButton-sc-1r9v2nf-1 bEeaYU doctorInfo_ctaButton__HzRgX" data-size="md" data-color="primary" data-block="true" data-theme="helloSites" data-is-loading="false" data-is-logged-in="true" data-gtm-vis-first-on-screen-1361037_245="986" data-gtm-vis-total-visible-time-1361037_245="100" data-gtm-vis-has-fired-1361037_245="1" data-gtm-vis-first-on-screen-1361037_265="1005" data-gtm-vis-total-visible-time-1361037_265="100" data-gtm-vis-has-fired-1361037_265="1">
+                      <span class="fAwTdkg">
+                        <span class="S2kaD9B">Đặt lịch hẹn</span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,15 @@
+h1{
+  color: red;
+}
+input{
+  width: 350px;
+}
+button{
+  background-color: goldenrod;
+  width: 80px;
+  margin-top: 20px;
+  /* margin-left: 160px; */
+}
+a{
+  color: red;
+}

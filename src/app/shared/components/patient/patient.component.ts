@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
   selector: 'app-patient',
@@ -7,9 +6,5 @@ import { UserService } from 'src/app/service/user/user.service';
   styleUrls: ['./patient.component.css']
 })
 export class PatientComponent {
-  constructor( private userService:UserService){
-
-  }
-
 
 }

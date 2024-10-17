@@ -1,0 +1,446 @@
+<main class="h-full overflow-y-auto">
+  <div class="container px-6 mx-auto grid">
+    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+      Chờ xác nhận
+    </h2>
+
+    <div class="w-full overflow-hidden rounded-lg shadow-xs">
+      <div class="w-full overflow-x-auto">
+        <div
+        *ngIf="showModalDelete"
+        class="relative z-10"
+        aria-labelledby="modal-title"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div
+            class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+          >
+            <div
+              class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+            >
+              <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                  <div
+                    class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
+                  >
+                    <svg
+                      class="h-6 w-6 text-red-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="sm:ml-4 sm:mt-0 sm:text-left">
+                    <h3
+                      class="text-base font-semibold leading-6 text-gray-900"
+                    >
+                      Xoá tài khoản
+                    </h3>
+                    <div class="">
+                      <p class="text-sm text-gray-500">
+                        Bạn có chắc chắn muốn xoá? Tất cả
+                        dữ liệu sẽ bị xóa vĩnh viễn. Hành động này không thể
+                        được hoàn tác.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+              >
+                <button
+                  (click)="deleteRegisterDoctor()"
+                  type="button"
+                  class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                >
+                  Xoá
+                </button>
+                <button
+                  (click)="closeModalDelete()"
+                  type="button"
+                  class="inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                >
+                  Huỷ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div
+          *ngIf="showModal"
+          class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+        >
+          <div class="relative w-auto my-6 mx-auto max-w-sm">
+            <!--content-->
+            <div
+              class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+            >
+              <!--header-->
+              <div
+                class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"
+              >
+                <h3 class="text-xl font-semibold">Cấp tài khoản</h3>
+                <!-- <button
+                  class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                  (click)="toggleModal()"
+                >
+                  <span
+                    class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
+                  >
+                    ×
+                  </span>
+                </button> -->
+              </div>
+              <!--body-->
+              <div class="relative p-6 flex-auto">
+                <form [formGroup]="doctorAccount" >
+                <label class="block text-sm">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Email </span
+                  >
+                  <input formControlName="to" class="form-control"
+                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  />
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Chủ đề</span
+                  >
+                  <input formControlName="subject" class="form-control"
+                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  />
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400">Username</span>
+                  <input
+                  formControlName="username" class="form-control"
+                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  />
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400">Password</span>
+                  <input
+                  formControlName="password" class="form-control"
+                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                  />
+                </label>
+                </form>
+              </div>
+              <!--footer-->
+              <div
+                class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
+              >
+                <button
+                  class="text-red background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  type="button"
+                  (click)="CloseToggleModal()"
+                >
+                  Close
+                </button>
+                <button
+                  class="text-black px-6 py-2 bg-green-500"
+                  (click)="sendEmail()"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          *ngIf="isModal"
+          class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
+        >
+          <div class="relative w-auto my-6 mx-auto max-w-sm">
+            <!--content-->
+            <div
+              class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+              style="height: 700px; overflow-y: scroll"
+            >
+              <!--header-->
+              <div
+                class="text-center border-b border-solid border-blueGray-200 rounded-t"
+                style="padding: 40px 30px"
+              >
+                <h3 class="text-xl font-semibold">Thông tin chi tiết</h3>
+              </div>
+              <!--body-->
+              <div class="relative p-6 flex-auto">
+                <label class="block text-sm">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Họ và tên:
+                    <span class="font-bold">{{dtor[0].name}}</span></span
+                  >
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Tên đăng nhập:
+                    <span class="font-bold">{{dtor[0].account.username}}</span></span
+                  >
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Email:
+                    <span class="font-bold">{{dtor[0].email}}</span></span
+                  >
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Số điện thoại:
+                    <span class="font-bold">{{dtor[0].phoneNumber}}</span></span
+                  >
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Địa chỉ nơi làm việc:
+                    <span class="font-bold">{{dtor[0].workAddress}}</span></span
+                  >
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Ngày sinh: <span class="font-bold">{{dtor[0].date}}</span></span
+                  >
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Trình độ: <span class="font-bold">{{dtor[0].education}}</span></span
+                  >
+                </label>
+
+
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Kinh nghiệm: <span class="font-bold">{{dtor[0].issue}}</span></span
+                  >
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Chuyên khoa: <span class="font-bold">{{dtor[0].specialist?.name}}</span></span
+                  >
+                </label>
+                <label class="block text-sm mt-4">
+                  <span class="text-gray-700 dark:text-gray-400"
+                    >Chứng chỉ hành nghề <span class="font-bold"></span
+                  ></span>
+                  <pmp-image-slider
+                    [images]="images"
+
+                  ></pmp-image-slider>
+                </label>
+              </div>
+              <!--footer-->
+              <div
+                class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
+              >
+                <button
+                  class="text-red background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  type="button"
+                  (click)="closeModal()"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <table class="w-full whitespace-no-wrap">
+          <thead>
+            <tr
+              class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+            >
+              <th class="px-4 py-3">Tài khoản</th>
+              <th class="px-4 py-3">Email</th>
+              <th class="px-4 py-3">Trạng thái</th>
+              <th class="px-4 py-3">Chuyên ngành</th>
+              <th class="px-4 py-3">Hành động</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of doctor"
+            class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+          >
+            <tr class="text-gray-700 dark:text-gray-400">
+              <td class="px-4 py-3">
+                <div class="flex items-center text-sm" (click)="openModal()">
+                  <!-- Avatar with inset shadow -->
+                  <div
+                    class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                  >
+                    <img
+                      class="object-cover w-full h-full rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&facepad=3&fit=facearea&s=707b9c33066bf8808c934c8ab394dff6"
+                      alt=""
+                      loading="lazy"
+                    />
+                    <div
+                      class="absolute inset-0 rounded-full shadow-inner"
+                      aria-hidden="true"
+                    ></div>
+                  </div>
+                  <div>
+                    <p class="font-semibold">{{item.name}}</p>
+                    <a class="text-xs text-blue-600 dark:text-blue-400" (click)="getUser(item.id)">
+                      Click để xem chi tiết
+                    </a>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-3 text-sm">{{item.email}}</td>
+              <td class="px-4 py-3 text-xs">
+                <span
+                  class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600"
+                >
+                  Chờ phê duyệt
+                </span>
+              </td>
+              <td class="px-4 py-3 text-sm">{{item.specialist?.name}}</td>
+              <td class="px-4 py-3">
+                <div class="flex items-center space-x-4 text-sm">
+                  <button  (click)="toggleModal(item)"
+                    class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                    aria-label="Edit"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="16"
+                      width="14"
+                      viewBox="0 0 448 512"
+                    >
+                      <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                      />
+                    </svg>
+                  </button>
+                  <button  (click)="openModalDelete(item)"
+                    class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                    aria-label="Delete"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="16"
+                      width="12"
+                      viewBox="0 0 384 512"
+                    >
+                      <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                      <path
+                        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
+      >
+
+        <span class="col-span-2"></span>
+        <!-- Pagination -->
+        <!-- <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
+          <nav aria-label="Table navigation">
+            <ul class="inline-flex items-center">
+              <li>
+                <button
+                  class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
+                  aria-label="Previous"
+                >
+                  <svg
+                    class="w-4 h-4 fill-current"
+                    aria-hidden="true"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button
+                  class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
+                >
+                  1
+                </button>
+              </li>
+              <li>
+                <button
+                  class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
+                >
+                  2
+                </button>
+              </li>
+              <li>
+                <button
+                  class="px-3 py-1 text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600 rounded-md focus:outline-none focus:shadow-outline-purple"
+                >
+                  3
+                </button>
+              </li>
+              <li>
+                <button
+                  class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
+                >
+                  4
+                </button>
+              </li>
+              <li>
+                <span class="px-3 py-1">...</span>
+              </li>
+              <li>
+                <button
+                  class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
+                >
+                  8
+                </button>
+              </li>
+              <li>
+                <button
+                  class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple"
+                >
+                  9
+                </button>
+              </li>
+              <li>
+                <button
+                  class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple"
+                  aria-label="Next"
+                >
+                  <svg
+                    class="w-4 h-4 fill-current"
+                    aria-hidden="true"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </span> -->
+      </div>
+    </div>
+
+    <!-- Charts -->
+  </div>
+</main>

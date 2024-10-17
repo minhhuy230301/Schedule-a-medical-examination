@@ -1,0 +1,27 @@
+<!-- <ejs-chart [title]="chartTitle" [primaryXAxis]="xAsis" [primaryYAxis]="yAsis">
+  <e-series-collection>
+    <e-series
+      type="Line"
+      [dataSource]="data"
+      xName="createAt"
+      yName="SoLuong"
+      [marker]="marketSettings"
+    ></e-series>
+  </e-series-collection>
+</ejs-chart> -->
+
+<main class="h-full overflow-y-auto">
+  <div class="container px-6 mx-auto grid">
+    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+      Thống kê
+    </h2>
+    <div class="flex gap-[25px]">
+      <div class="w-[70%]">
+        <canvas id="bubchart"></canvas>
+      </div>
+      <div class="w-[20%]">
+        <canvas id="piechart"></canvas>
+      </div>
+    </div>
+  </div>
+</main>

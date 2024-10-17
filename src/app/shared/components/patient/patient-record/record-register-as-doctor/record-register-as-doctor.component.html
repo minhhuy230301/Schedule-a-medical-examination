@@ -1,0 +1,126 @@
+<div>
+  <p class="font-bold text-[27px] text-left">
+    Đăng kí hợp tác với TeleMediConnect
+  </p>
+  <form [formGroup]="dataPatient" (ngSubmit)="getDataPatientFromForm()">
+    <div class="form-group">
+      <label for="name">Họ và tên</label>
+      <input type="text" class="form-control"  name="name"  formControlName="name"/>
+        <p style="color: red" *ngIf="dataPatient.controls['name'].hasError('required')&& dataPatient.controls['name'].touched">(*)Tên không được để trống</p>
+            <p style="color: red" *ngIf="dataPatient.controls['name'].hasError('pattern')&& dataPatient.controls['name'].touched">(*)Tên không được chứa kí tự đặc biệt</p>
+
+    </div>
+    <div class="form-group mt-4">
+      <label for="alterEgo">Ngày sinh</label>
+      <input type="text" class="form-control" id="alterEgo"   formControlName="date"/>
+      <p style="color: red" *ngIf="dataPatient.controls['date'].hasError('required')&& dataPatient.controls['date'].touched">(*)Ngày sinh không được để trống</p>
+            <p style="color: red" *ngIf="dataPatient.controls['date'].hasError('pattern')&& dataPatient.controls['date'].touched">(*)Ngày sinh phải đúng định dạng(Năm-Tháng-Ngày) </p>
+
+    </div>
+    <div class="form-group mt-4">
+      <label for="alterEgo">Giới tính</label>
+      <select formControlName="gender" class="form-control">
+        <option value="0">Nữ</option>
+        <option value="1">Nam</option>
+        <option value="2">giới tính khác</option>
+
+      </select>
+
+    </div>
+    <div class="form-group mt-4">
+      <label for="alterEgo">Email</label>
+      <input type="text" class="form-control"  formControlName="email" />
+        <p style="color: red" *ngIf="dataPatient.controls['email'].hasError('required')&& dataPatient.controls['email'].touched">(*)Email không được để trống</p>
+            <p style="color: red" *ngIf="dataPatient.controls['email'].hasError('pattern')&& dataPatient.controls['email'].touched">(*)Email phải đúng định dạng(abc@gmail.com) </p>
+
+    </div>
+
+    <div class="form-group mt-4">
+      <label for="alterEgo">Số điện thoại</label>
+      <input type="text" class="form-control"   formControlName="phoneNumber"/>
+      <p style="color: red" *ngIf="dataPatient.controls['phoneNumber'].hasError('required')&& dataPatient.controls['phoneNumber'].touched">(*)Số điện thoại không được để trống</p>
+            <p style="color: red" *ngIf="dataPatient.controls['phoneNumber'].hasError('pattern')&& dataPatient.controls['phoneNumber'].touched">(*)Chỉ được nhập số </p>
+
+    </div>
+
+    <div class="form-group mt-4">
+      <label for="alterEgo">Địa chỉ nhà</label>
+      <input type="text" class="form-control"   formControlName="houseAddress"/>
+    </div>
+    <div class="form-group mt-4">
+      <label for="alterEgo">Địa chỉ nơi làm việc(Ghi cụ thể)</label>
+      <input type="text" class="form-control"   formControlName="workAddress"/>
+      <p style="color: red" *ngIf="dataPatient.controls['workAddress'].hasError('required')&& dataPatient.controls['workAddress'].touched">(*)Địa chỉ nơi làm việc không được để trống</p>
+
+    </div>
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
+
+    <div class="form-group mt-4">
+      <label for="alterEgo">Học vấn</label>
+      <input type="text" class="form-control" id="alterEgo"  formControlName="education" />
+      <p style="color: red" *ngIf="dataPatient.controls['education'].hasError('required')&& dataPatient.controls['education'].touched">(*)Học vấn không được để trống</p>
+
+    </div>
+    <div class="form-group mt-4">
+      <label for="alterEgo">Thế mạnh</label>
+      <input type="text" class="form-control" id="alterEgo"  formControlName="strengths" />
+
+    </div>
+    <div class="form-group mt-4">
+      <label for="alterEgo">Kinh nghiệm làm việc</label>
+      <input type="text" class="form-control" id="alterEgo"  formControlName="issue"/>
+      <p style="color: red" *ngIf="dataPatient.controls['issue'].hasError('required')&& dataPatient.controls['issue'].touched">(*)Kinh nghiệm làm việc không được để trống</p>
+
+    </div>
+
+    <div class="form-group mt-4">
+      <label for="power">Chuyên khoa</label>
+      <select class="form-control" id="power" required  formControlName="specialist">
+        <option *ngFor="let i of specialist" [ngValue]="i">{{i.name}}</option>
+      </select>
+    </div>
+    <div class="form-group mt-4">
+      <label for="alterEgo">Chứng chỉ hành nghề</label>
+      <div class="row">
+        <div class="col-8">
+          <label class="btn btn-default p-0">
+            <input
+              type="file"
+              accept="image/*"
+              multiple
+              (change)="onImageSelected($event)"
+            />
+          </label>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <img
+            *ngFor="let preview of previews"
+            [src]="preview"
+            class="preview mt-2"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group mt-4">
+      <label for="alterEgo">Nơi cấp chứng chỉ</label>
+      <input type="text" class="form-control" id="alterEgo"  formControlName="issue" />
+      <p style="color: red" *ngIf="dataPatient.controls['issue'].hasError('required')&& dataPatient.controls['issue'].touched">(*)Nơi cấp chứng chỉ không được để trống</p>
+
+    </div>
+
+    <button type="submit" class="mt-4 btn btn-success bg-green-500">
+      Đăng kí
+    </button>
+
+    <!-- NOT SHOWN IN DOCS -->
+
+    <!-- - -->
+  </form>
+</div>
+<!-- <div>
+  <input type="text" id="addressInput" placeholder="Nhập địa chỉ...">
+<button (click)="geocodeAddress()">Tìm kiếm</button>
+</div> -->
+<!-- <div id="map" style="width: 100%; height: 400px;"></div> -->
+

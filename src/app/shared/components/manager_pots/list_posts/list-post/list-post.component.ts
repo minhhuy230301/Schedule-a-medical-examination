@@ -1,16 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { PotsService } from './../../../../../service/pots/pots.service';
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
 import { Pots } from 'src/app/model/pots';
+import { PotsService } from 'src/app/service/pots/pots.service';
 
 @Component({
   selector: 'app-list-post',
   templateUrl: './list-post.component.html',
   styleUrls: ['./list-post.component.css']
 })
-export class ListPostComponent implements OnInit {
-
+export class ListPostComponent {
   post:Pots[]=[];
   isZoomed = false;
 
